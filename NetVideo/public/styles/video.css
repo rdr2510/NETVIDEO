@@ -1,0 +1,125 @@
+body{
+    height: 100%;
+    width: 100%;
+}
+#contain-video{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+#player{
+    position: relative;
+}
+#command{
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001;
+}
+#header-video{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+#contenu{
+    background: linear-gradient(90deg, black, 80%, transparent);
+    transition: ease-in-out 1s;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+#footer-video{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+
+.vjs-theme-sea.vjs-paused .vjs-big-play-button 
+{
+    display: none;
+}
+
+.spinner-border{
+    z-index: 1001;
+    left: 50%;
+    top: 50%;
+}
+
+.trackbar{
+    -webkit-appearance: none;
+    appearance: none;
+    height: 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.trackbar:hover{
+    opacity: 1;
+}
+
+.trackbar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: var(--bs-primary);
+    cursor: pointer;
+    transition: ease-in-out .5s;
+}
+
+.trackbar::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: var(--bs-primary);
+    cursor: pointer;
+    transition: ease-in-out .5s;
+}
+
+.trackbar::-webkit-slider-thumb:hover {
+    width: 50px;
+    height: 50px;
+    background: var(--bs-danger);
+    cursor: pointer;
+    transition: ease-in-out .5s;
+}
+
+
+#bouton-play:hover{
+    color: var(--bs-primary);
+}
+#bouton-retour:hover{
+    color: var(--bs-primary);
+}
+#bouton-avance:hover{
+    color: var(--bs-primary);
+}
+#bouton-volume:hover{
+    color: var(--bs-primary);
+}
+#bouton-back:hover{
+    color: var(--bs-primary);
+}
+
+#bouton-back{
+    cursor: pointer;
+    color: var(--bs-light);
+}
+#bouton-play{
+    cursor: pointer;
+}
+#bouton-retour{
+    cursor: pointer;
+}
+#bouton-avance{
+    cursor: pointer;
+}
+#bouton-volume{
+    cursor: pointer;
+}

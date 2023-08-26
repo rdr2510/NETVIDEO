@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand text-light" href="#">
+                    <div class="d-flex py-0">
+                        <div class="bg-black d-flex align-items-center px-1 ps-4 fs-1 rounded-start-3">NET</div>             
+                        <div class="bg-white d-flex align-items-center text-black fs-1 px-1 pe-4 rounded-end-3">VIDEO</div>
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-light d-flex align-items-centrer px-4" aria-current="page" href="/"><span type="button" disabled id="bouton-volume" class="material-symbols-outlined me-2">home</span>ACCUEIL</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light d-flex align-items-centrer px-4" href="#"><span type="button" disabled id="bouton-volume" class="material-symbols-outlined me-2">cloud_upload</span>UPLOAD</a>
+                    </li>
+                    </ul>
+                    <div class="d-flex" role="recherche">
+                        <input id="recherche" class="form-control me-2" type="search" placeholder="Chercher vos film ici..." aria-label="Recherche" onkeydown="onClavierDown(this)">
+                        <button class="btn btn-success" type="submit"  onclick="onRecherche()">Recherche</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
