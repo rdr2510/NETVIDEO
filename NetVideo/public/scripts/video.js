@@ -30,7 +30,7 @@ function secondToTime(secondValue){
 
 videojs('player').ready(function () {
     this.on('timeupdate', function () {
-        if (10 < this.currentTime() && this.currentTime() < 20){
+        if (8 < this.currentTime() && this.currentTime() < 10){
             contenu.style.transition= 'ease-in-out 1s';
             contenu.style.opacity= '0';
             //contenu.style.zIndex= '-1000';
@@ -74,6 +74,14 @@ videojs('player').ready(function () {
             contenu.style.transition= 'ease-in-out 1s';
             contenu.style.opacity= '0';
             contenu.style.zIndex= '-1000';
+            mouveMoveTimeout = setTimeout(function(){
+                footerVideo.style.transition= 'ease-in-out 1s';
+                footerVideo.style.opacity= '0';
+                footerVideo.style.zIndex= '-1000';
+                headerVideo.style.transition= 'ease-in-out 1s';
+                headerVideo.style.opacity= '0';
+                headerVideo.style.zIndex= '-1000';
+            }, 5000);
         }
         statePlayer= 2; // playing
     });

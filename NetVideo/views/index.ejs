@@ -13,58 +13,58 @@
         <%- include('./includes/header.ejs') %>
         <div class="w-100 bg-primary" >
             <div id="contain-list" class="d-flex flex-wrap justify-content-center overflow-y-scroll w-100" style="height: 90vh";>
-                <%  for (let i=0; i < resultat.length; ++i){ %>
-                            <div class="fiche m-3" type="button" data-bs-target="#fiche-detail-<%= resultat[i].id; %>" data-bs-toggle="modal">
+                <%  for (let i=0; i < resultatVideos.length; ++i){ %>
+                            <div class="fiche m-3" type="button" data-bs-target="#fiche-detail-<%= resultatVideos[i].id; %>" data-bs-toggle="modal">
                                 <div class="poster">
-                                    <img src="<%= resultat[i].urlPoster %>" alt="">
+                                    <img src="<%= resultatVideos[i].urlPoster %>" alt="">
                                 </div>
                                 <div class="description">
-                                    <span class="fs-5 fw-bold text-light text-center px-1 w-100 d-flex align-items-end justify-content-center" style="height: 6rem;"><%= resultat[i].titre %></span>
+                                    <span class="fs-5 fw-bold text-light text-center px-1 w-100 d-flex align-items-end justify-content-center" style="height: 6rem;"><%= resultatVideos[i].titre %></span>
                                     <div id="detail" class="d-flex justify-content-around align-items-center py-2 w-100">
                                         <span class="fw-bold text-danger">
-                                            <%= resultat[i].date %>
+                                            <%= resultatVideos[i].date %>
                                         </span>
                                         <span class="fw-bold text-black">
-                                            <%= resultat[i].duree %>
+                                            <%= resultatVideos[i].duree %>
                                         </span>
                                         <span class="fw-bold text-danger">
-                                            <%= resultat[i].version %>
+                                            <%= resultatVideos[i].version %>
                                         </span>
                                     </div>
-                                    <p class="text-light mx-2 my-0 p-0 d-inline-block text-truncate" style="max-width: 220px;"><%= resultat[i].acteurs %></p>
-                                    <p class="text-warning fw-bold mx-2 my-0 p-0 d-inline-block text-truncate" style="max-width: 220px;"><%= resultat[i].categories %></p>
-                                    <p id="synopsis" class="text-light text-justify d-block m-2 p-0 px-1 overflow-y-scroll" style="height: 200px; max-height: 200px;"><%= resultat[i].synopsis %></p>
+                                    <p class="text-light mx-2 my-0 p-0 d-inline-block text-truncate" style="max-width: 220px;"><%= resultatVideos[i].acteurs %></p>
+                                    <p class="text-warning fw-bold mx-2 my-0 p-0 d-inline-block text-truncate" style="max-width: 220px;"><%= resultatVideos[i].categories %></p>
+                                    <p id="synopsis" class="text-light text-justify d-block m-2 p-0 px-1 overflow-y-scroll" style="height: 200px; max-height: 200px;"><%= resultatVideos[i].synopsis %></p>
                                 </div>
                             </div>
 
-                            <div class="modal fade" id="fiche-detail-<%= resultat[i].id; %>" data-bs-keyboard="true" tabindex="-1" aria-hidden="true">
+                            <div class="modal fade" id="fiche-detail-<%= resultatVideos[i].id; %>" data-bs-keyboard="true" tabindex="-1" aria-hidden="true">
                                 <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable" >
                                     <div class="modal-content bg-primary rounded-4">
                                         <div class="modal-header">
-                                            <h1 class="modal-title fs-5 text-light" id="staticBackdropLabel"><%= resultat[i].titre %></h1>
+                                            <h1 class="modal-title fs-5 text-light" id="staticBackdropLabel"><%= resultatVideos[i].titre %></h1>
                                             <button type="button" class="btn-close text-light" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
                                             <div class="d-flex flex-wrap flex-lg-nowrap justify-content-center">
-                                                <img id="fiche-poster" src="<%= resultat[i].urlPoster %>" class="rounded-4" alt="<%= resultat[i].titre; %>">
+                                                <img id="fiche-poster" src="<%= resultatVideos[i].urlPoster %>" class="rounded-4" alt="<%= resultatVideos[i].titre; %>">
                                                 <div class="ms-lg-4">
                                                     <div class="d-flex flex-wrap justify-content-between my-2 mb-3">
-                                                        <div class="mx-2 my-2 d-flex"><span class="bg-black text-light fw-bold px-2 py-1 rounded-start-2">Année: </span><span class="text-black bg-light px-2 py-1 rounded-end-2"><%= resultat[i].date %></span></div>
-                                                        <div class="mx-2 my-2 d-flex"><span class="bg-black text-light fw-bold px-2 py-1 rounded-start-2">Durée: </span><span class="text-black bg-light px-2 py-1 rounded-end-2"><%= resultat[i].duree %></span></div>
-                                                        <div class="mx-2 my-2 d-flex"><span class="bg-black text-light fw-bold px-2 py-1 rounded-start-2">Langue: </span><span class="text-black bg-light px-2 py-1 rounded-end-2"><%= resultat[i].version %></span></div>
-                                                        <div class="mx-2 my-2 d-flex"><span class="bg-black text-light fw-bold px-2 py-1 rounded-start-2">Pays: </span><span class="text-black bg-light px-2 py-1 rounded-end-2"><%= resultat[i].pays %></span></div>
+                                                        <div class="mx-2 my-2 d-flex"><span class="bg-black text-light fw-bold px-2 py-1 rounded-start-2">Année: </span><span class="text-black bg-light px-2 py-1 rounded-end-2"><%= resultatVideos[i].date %></span></div>
+                                                        <div class="mx-2 my-2 d-flex"><span class="bg-black text-light fw-bold px-2 py-1 rounded-start-2">Durée: </span><span class="text-black bg-light px-2 py-1 rounded-end-2"><%= resultatVideos[i].duree %></span></div>
+                                                        <div class="mx-2 my-2 d-flex"><span class="bg-black text-light fw-bold px-2 py-1 rounded-start-2">Langue: </span><span class="text-black bg-light px-2 py-1 rounded-end-2"><%= resultatVideos[i].version %></span></div>
+                                                        <div class="mx-2 my-2 d-flex"><span class="bg-black text-light fw-bold px-2 py-1 rounded-start-2">Pays: </span><span class="text-black bg-light px-2 py-1 rounded-end-2"><%= resultatVideos[i].pays %></span></div>
                                                     </div>
                                                     <div class="d-flex flex-wrap flex-lg-nowrap justify-content-between my-2">
-                                                        <div><span class="text-black fw-bold">Réalisateur: </span><span class="text-light"><%= resultat[i].realisateur %></span></div>
-                                                        <div><span class="text-black fw-bold">Acteurs: </span><span class="text-light"><%= resultat[i].acteurs %></span></div>
+                                                        <div><span class="text-black fw-bold">Réalisateur: </span><span class="text-light"><%= resultatVideos[i].realisateur %></span></div>
+                                                        <div><span class="text-black fw-bold">Acteurs: </span><span class="text-light"><%= resultatVideos[i].acteurs %></span></div>
                                                     </div>
-                                                    <div class="my-2"><span class="text-black fw-bold">Genres: </span><span class="text-light"><%= resultat[i].categories %></span></div>
-                                                    <div class="my-2 mt-3"><p class="text-light text-justify"><%= resultat[i].synopsis %></p></div>
+                                                    <div class="my-2"><span class="text-black fw-bold">Genres: </span><span class="text-light"><%= resultatVideos[i].categories %></span></div>
+                                                    <div class="my-2 mt-3"><p class="text-light text-justify"><%= resultatVideos[i].synopsis %></p></div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="modal-footer d-flex justify-content-between">
-                                            <button type="button" class="btn btn-danger d-flex align-items-center" onclick="onViewVideo('<%= resultat[i].id %>', '<%= resultat[i].urlVideo %>')"><span class="material-symbols-outlined me-2">play_circle</span>Visionner</button>
+                                            <button type="button" class="btn btn-danger d-flex align-items-center" onclick="onViewVideo('<%= resultatVideos[i].id %>', '<%= resultatVideos[i].urlVideo %>')"><span class="material-symbols-outlined me-2">play_circle</span>Visionner</button>
                                             <button type="button" class="btn btn-secondary d-flex align-items-center" data-bs-dismiss="modal"><span class="material-symbols-outlined me-2">cancel</span>Fermer</button>
                                         </div>
                                     </div>

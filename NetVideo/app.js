@@ -44,15 +44,25 @@ routesCategories(app);
 
 // route views EJS coté client
 app.get("/", async (req, res) => {
-    let response;
+    let responseVideos;
+    let typeFiltre= 0; // all
+    let Recherche= req.query.Recherche;
+    let Categorie= req.query.Categorie; 
     if (req.query.Recherche){
-        response= await axios.get('http://localhost:8080/api/videos?titre='+req.query.Recherche)
+        responseVideos= await axios.get('http://localhost:8080/api/videos?titre='+req.query.Recherche);
+
+        typeFiltre= 1; //recherche
+    } else if (req.query.Categorie){
+        responseVideos= await axios.get('http://localhost:8080/api/videos/Categorie?Categorie='+req.query.Categorie);
+        typeFiltre= 2;
     } else { // Affichage toute les films  - par défaut
-        response= await axios.get('http://localhost:8080/api/videos')
+        responseVideos= await axios.get('http://localhost:8080/api/videos')
     }
-    if (response.status === 200){
-        const resultat= response.data;
-        res.status(200).render('index', {resultat});
+    let responseCategories= await axios.get('http://localhost:8080/api/categories')
+    if (responseVideos.status === 200 && responseCategories.status===200){
+        const resultatVideos= responseVideos.data;
+        const resultatCategories= responseCategories.data;
+        res.status(200).render('index', {resultatVideos, resultatCategories, typeFiltre, Recherche, Categorie});
     }
 });
 

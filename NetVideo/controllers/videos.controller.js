@@ -47,6 +47,17 @@ export function findAll(req, res) {
     });
 }
 
+// Retrieve all Videos from the database.
+export function findCategorie(req, res) {
+    const categorie = req.query.Categorie;
+    let condition = { categories: categorie };
+    Videos.find(condition).then(data => {
+        res.send(data);
+    }).catch(err => {
+        res.status(500).send({ message: err.message || "Some error occurred while retrieving categories." });
+    });
+}
+
 // Find a single Video with an id
 export function findOne(req, res) {
     const id = req.params.id;

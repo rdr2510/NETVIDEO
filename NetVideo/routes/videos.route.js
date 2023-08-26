@@ -1,4 +1,4 @@
-import {create, findAll, findOne, update, Delete, clear} from '../controllers/videos.controller.js';
+import {create, findAll, findOne, update, Delete, clear, findCategorie} from '../controllers/videos.controller.js';
 import express from 'express';
 
 export default function routesVideos(app) {  
@@ -10,6 +10,9 @@ export default function routesVideos(app) {
     // Retrieve all Videos
     router.get("/", findAll);
   
+    // Retrieve all Videos
+    router.get("/categorie/", findCategorie);
+
     // Retrieve a single Video with id
     router.get("/:id", findOne);
   
