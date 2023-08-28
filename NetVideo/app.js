@@ -66,6 +66,30 @@ app.get("/", async (req, res) => {
     }
 });
 
+// upload form
+app.get("/upload", async (req, res) => {
+    let responseCategories= await axios.get('http://localhost:8080/api/categories')
+    if (responseCategories.status===200){
+        const resultatCategories= responseCategories.data;
+        res.status(200).render('upload', {resultatCategories});
+    }
+});
+
+app.post("/upload/data", async (req, res) => {
+    let response= await axios.post('http://localhost:8080/api/videos/add',
+    {titre: req.body.titre, date: req.body.date, duree: req.body.duree, pays: req.body.pays,
+     synopsis: req.body.synopsis, realisateur: req.body.realisateur, version: req.body.version,
+     urlPoster: req.body.urlPoster, urlVideo: req.body.urlVideo, acteurs: req.body.acteurs, 
+     categories: req.body.genres,}).then(async (response)=>{
+        let responseCategories= await axios.get('http://localhost:8080/api/categories')
+        if (responseCategories.status===200){
+            res.status(200).render('uploadsuccess', {resultatCategories});
+        }
+    }).catch((error)=>{
+
+    });
+});
+
 // route streaming video player
 app.get("/video", async function (req, res) {
     if (req.query.urlStream && req.query.id){

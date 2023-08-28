@@ -106,13 +106,21 @@
 }
 
 
+@media (min-width: 768px) { /*large*/
+    .width-100{
+        width: 100%;
+    }
+}
 
-@media (min-width: 992px) {
+@media (min-width: 992px) { /*large*/
     #fiche-poster{
         width: 18rem;
     }
     .card{
         width: 18rem;
+    }
+    .width-100{
+        width: 100%;
     }
 }
 
@@ -126,7 +134,7 @@
     }
 }
 
-@media (max-width: 768px) { 
+@media (max-width: 768px) { /*meduim*/
     .card{
         height: fit-content;
         width: 18rem;

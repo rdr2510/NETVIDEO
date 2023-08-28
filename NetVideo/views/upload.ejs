@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('./includes/head.ejs') %>
+    </head>
+    <body class="overflow-hidden bg-primary">
+        <%- include('./includes/header.ejs') %>
+
+        <div class="h-100 mt-md-5 mt-2">
+            <div style="height: calc(100vh - 100px); overflow-y: auto; overflow-x: hidden">
+                    <form action="/upload/data" class="needs-validation" novalidate method="post">
+                        <div class="d-flex flex-md-row flex-column">
+                            <div class="mx-4 me-md-2 px-4 py-4 border rounded-3 width-100">
+                                <div>
+                                    <label for="validationCustom01" class="form-label mb-0 fw-bold ">Titre</label>
+                                    <input name="titre" type="text" class="form-control" id="validationCustom01" placeholder="Titre" required>
+                                    <div class="invalid-feedback mt-0">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="w-100 d-flex flex-md-row flex-column mt-2">
+                                    <div class="w-100 me-md-2">
+                                        <label for="validationCustom01" class="form-label mb-0 fw-bold ">Année de sortie</label>
+                                        <input name="date" type="text" pattern="\d*" max="2025" maxlength="4" class="form-control" id="validationCustom01" placeholder="Année de sortie" required>
+                                        <div class="invalid-feedback mt-0">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                    <div class="w-100 ms-md-2">
+                                        <label for="validationCustom01" class="form-label mb-0 fw-bold ">Durée</label>
+                                        <input name="duree" type="text" class="form-control" id="validationCustom01" placeholder="Durée" required>
+                                        <div class="invalid-feedback mt-0">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-100 d-flex flex-md-row flex-column mt-2">
+                                    <div class="w-100 me-md-2">
+                                        <label for="validationCustom01" class="form-label mb-0 fw-bold ">Langue</label>
+                                        <input name="langue" type="text" class="form-control" id="validationCustom01" placeholder="Langue" required>
+                                        <div class="invalid-feedback mt-0">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                    <div class="w-100 ms-md-2">
+                                        <label for="validationCustom01" class="form-label mb-0 fw-bold ">Pays</label>
+                                        <input name="pays" type="text" class="form-control" id="validationCustom01" placeholder="Pays, Séparer par un virgule si plusieurs" required>
+                                        <div class="invalid-feedback mt-0">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <label for="validationCustom01" class="form-label mb-0 fw-bold ">Réalisateur</label>
+                                    <input name="realisateur" type="text" class="form-control" id="validationCustom01" placeholder="Réalisateur, Séparer par un virgule si plusieurs" required>
+                                    <div class="invalid-feedback mt-0">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <label for="validationCustom01" class="form-label mb-0 fw-bold ">Acteurs</label>
+                                    <input name="acteurs" type="text" class="form-control" id="validationCustom01" placeholder="Acteurs, Séparer par un virgule si plusieurs" required>
+                                    <div class="invalid-feedback mt-0">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <label for="validationCustom01" class="form-label mb-0 fw-bold ">Genres</label>
+                                    <input name="genres" type="text" class="form-control" id="validationCustom01" placeholder="Genres, Séparer par un virgule si plusieurs" required>
+                                    <div class="invalid-feedback mt-0">
+                                        Looks good!
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="width-100 d-flex flex-column">
+                                <div class="h-100 mx-4 ms-md-2 px-4 py-4 pt-2 border rounded-3 my-4 mt-md-0">
+                                    <div class="h-100 pb-4">
+                                        <label for="validationCustom01" class="form-label mb-0 fw-bold ">Résumé</label>
+                                        <textarea name="synopsis" style="resize: none;" class="form-control h-100" id="validationCustom01" placeholder="Résumé" required></textarea>
+                                        <div class="invalid-feedback mt-0">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mx-4 ms-md-2 px-4 py-2 border rounded-3 my-md-0 mb-md-4">
+                                    <div class="pb-2">
+                                        <label for="validationCustom01" class="form-label mb-0 fw-bold ">Lien Poster</label>
+                                        <input name="urlPoster" type="text" class="form-control" id="validationCustom01" placeholder="Lien Poster" required></input>
+                                        <div class="invalid-feedback mt-0">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mx-4 ms-md-2 px-4 py-2 border rounded-3 my-4 my-md-0">
+                                    <div class="pb-2">
+                                        <label for="validationCustom01" class="form-label mb-0 fw-bold ">Lien Video</label>
+                                        <input name="urlVideo" type="text" class="form-control" id="validationCustom01" placeholder="Lien Video" required></input>
+                                        <div class="invalid-feedback mt-0">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="d-flex justify-content-end my-4 mx-4 px-4">
+                            <button class="px-4 py-3 btn btn-primary bg-success d-flex align-items-center" type="submit">
+                                <span class="material-symbols-outlined me-2">upload</span>Ajouter
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        <%- include('./includes/foot.ejs') %>
+</body>
+</html>

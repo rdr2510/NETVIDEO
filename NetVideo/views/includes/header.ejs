@@ -20,24 +20,20 @@
                         </a>
                         <ul class="dropdown-menu" style="height: auto; overflow-x: hidden; overflow-y: scroll; max-height: 600px;">
                             <%  for (let i=0; i<resultatCategories.length; ++i){ %>
-                                    <li><a class="dropdown-item" href="?Categorie=<%= resultatCategories[i].nom %>"><%= resultatCategories[i].nom %></a></li>        
+                                    <li><a class="dropdown-item" href="/?Categorie=<%= resultatCategories[i].nom %>"><%= resultatCategories[i].nom %></a></li>        
                             <%  } %>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light d-flex align-items-centrer px-4" href="#"><span type="button" class="material-symbols-outlined me-2">cloud_upload</span>UPLOAD</a>
+                    <li class="nav-item bg-secondary">
+                        <a class="nav-link text-light d-flex align-items-centrer px-4" href="/upload"><span type="button" class="material-symbols-outlined me-2">cloud_upload</span>UPLOAD</a>
                     </li>
                     </ul>
                     <div class="d-flex" role="recherche">
                         <input id="recherche" class="form-control me-2" type="search" placeholder="Chercher vos film ici..." aria-label="Recherche" onkeydown="onClavierDown(this)">
-                        <button class="btn btn-success" type="submit"  onclick="onRecherche()">Recherche</button>
+                        <button class="btn btn-success d-flex align-items-center" type="submit"  onclick="onRecherche()">
+                            <span class="material-symbols-outlined me-2">search</span>Recherche
+                        </button>
                     </div>
                 </div>
             </div>
         </nav>
-<div>
-    <div class="d-flex justify-content-end mx-4">
-        <div class="badge text-bg-secondary d-flex me-3"><h5 class="me-2 fw-bold my-0">FILTRE:</h5><h5 class="my-0"><%= typeFiltre===0?'TOUS':typeFiltre===1?'RECHERCHE - "'+Recherche+'"':typeFiltre===2?'CATÉGORIE - "'+Categorie+'"':'AUTRE' %></h5></div>
-        <div class="badge text-bg-warning d-flex align-items-center"><h5 class="me-2 fw-bold my-0">TOTAL:</h5><h5 class="my-0 text-danger"><%= resultatVideos.length %></h5></div>
-    </div>
-</div>

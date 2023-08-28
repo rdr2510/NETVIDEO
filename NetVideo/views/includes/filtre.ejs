@@ -1,0 +1,6 @@
+<div>
+    <div class="d-flex justify-content-end mx-4 mb-2">
+        <div class="badge text-bg-secondary d-flex me-3"><h5 class="me-2 fw-bold my-0">FILTRE:</h5><h5 class="my-0"><%= typeFiltre===0?'TOUS':typeFiltre===1?'RECHERCHE - "'+Recherche+'"':typeFiltre===2?'CATÉGORIE - "'+Categorie+'"':'AUTRE' %></h5></div>
+        <div class="badge text-bg-warning d-flex align-items-center"><h5 class="me-2 fw-bold my-0 text-danger">TOTAL:</h5><h5 class="my-0 text-dark fw-bold"><%= resultatVideos.length %></h5></div>
+    </div>
+</div>
