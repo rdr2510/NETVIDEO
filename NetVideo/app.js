@@ -76,18 +76,19 @@ app.get("/upload", async (req, res) => {
 });
 
 app.post("/upload/data", async (req, res) => {
+    let responseCategories= await axios.get('http://localhost:8080/api/categories')
     let response= await axios.post('http://localhost:8080/api/videos/add',
     {titre: req.body.titre, date: req.body.date, duree: req.body.duree, pays: req.body.pays,
      synopsis: req.body.synopsis, realisateur: req.body.realisateur, version: req.body.version,
      urlPoster: req.body.urlPoster, urlVideo: req.body.urlVideo, acteurs: req.body.acteurs, 
-     categories: req.body.genres,}).then(async (response)=>{
-        let responseCategories= await axios.get('http://localhost:8080/api/categories')
-        if (responseCategories.status===200){
-            res.status(200).render('uploadsuccess', {resultatCategories});
+     categories: req.body.genres,});
+     if (response === 200){
+        if (responseCategories.status === 200){
+            res.status(200).render('uploadsuccess', {resultatCategories, errorType: 0, message: 'Ajout de nouvelle video avec succés ! - ' + req.body.titre});
         }
-    }).catch((error)=>{
-
-    });
+    } else {
+        res.status(500).render('uploadsuccess', {resultatCategories, errorType: 1, message: 'Error interne de serveur, echec !'});
+    }
 });
 
 // route streaming video player

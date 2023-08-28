@@ -6,8 +6,14 @@
     <body class="overflow-hidden bg-primary">
         <%- include('./includes/header.ejs') %>
 
-        <div>
-            <%= titre %>
+        <div class="d-flex justify-content-center">
+            <% if (errorType===0){%>
+                <span class="material-symbols-outlined bg-success fs-1">check_circle</span>
+                <p><%= message %></p>
+            <% } else { %>
+                <span class="material-symbols-outlined bg-danger fs-1">cancel</span>
+                <p><%= message %></p>
+            <% } %>
         </div>
         
         <%- include('./includes/foot.ejs') %>
